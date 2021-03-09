@@ -1,0 +1,78 @@
+﻿<!--
+Quick Kebab
+Copyright (C) 2021 Dust in the Wind
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/> .
+-->
+
+<Window
+    x:Class="QuickKebab.MainWindow"
+
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:quickKebab="clr-namespace:QuickKebab"
+
+    mc:Ignorable="d"
+    Title="quick-kebab-case"
+    Height="300"
+    Width="800"
+    d:DataContext="{d:DesignInstance quickKebab:MainViewModel}">
+
+    <Grid Margin="30">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Content="_Decoded Text"
+            Target="{Binding ElementName=DecodedTextBox}"
+            VerticalAlignment="Center" />
+
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="1"
+            Name="DecodedTextBox"
+            Text="{Binding DecodedText, UpdateSourceTrigger=PropertyChanged}"
+            Padding="12 7" />
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Content="_Encoded Text"
+            Target="{Binding ElementName=EncodedTextBox}"
+            Margin="0 10 0 0"
+            VerticalAlignment="Center" />
+
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Name="EncodedTextBox"
+            Text="{Binding EncodedText, UpdateSourceTrigger=PropertyChanged}"
+            Padding="12 7"
+            Margin="0 10 0 0" />
+    </Grid>
+
+</Window>
