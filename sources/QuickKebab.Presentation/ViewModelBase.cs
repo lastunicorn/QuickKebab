@@ -14,20 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.Windows;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-namespace QuickKebab
+namespace DustInTheWind.QuickKebab.Presentation
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public class ViewModelBase : INotifyPropertyChanged
     {
-        public MainWindow()
-        {
-            InitializeComponent();
+        public event PropertyChangedEventHandler PropertyChanged;
 
-            DataContext = new MainViewModel();
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

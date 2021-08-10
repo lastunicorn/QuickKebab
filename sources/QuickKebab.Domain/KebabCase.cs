@@ -18,12 +18,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace QuickKebab
+namespace DustInTheWind.QuickKebab.Domain
 {
-    internal class KebabCase
+    public class KebabCase
     {
         private string decodedText;
         private string encodedText;
+
+        public HashSet<char> CharsToEncode { get; } = new HashSet<char>
+        {
+            ' ',
+            '/',
+            '[',
+            ']',
+            '(',
+            ')',
+            '{',
+            '}'
+        };
 
         public event EventHandler Decoded;
         public event EventHandler Encoded;
@@ -58,11 +70,15 @@ namespace QuickKebab
                 OnDecoded();
             }
         }
-        private static string ToKebabCase(string input)
+
+        private string ToKebabCase(string input)
         {
-            return input
-                .ToLower()
-                .Replace(' ', '-');
+            string result = input.ToLower();
+
+            foreach (char charToEncode in CharsToEncode)
+                result = result.Replace(charToEncode, '-');
+
+            return result;
         }
 
         private static IEnumerable<char> FromKebabCase(string input)

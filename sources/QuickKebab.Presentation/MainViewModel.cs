@@ -15,10 +15,11 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using DustInTheWind.QuickKebab.Domain;
 
-namespace QuickKebab
+namespace DustInTheWind.QuickKebab.Presentation
 {
-    internal class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
         private readonly KebabCase kebabCase;
 
@@ -49,9 +50,13 @@ namespace QuickKebab
             }
         }
 
-        public MainViewModel()
+        public CopyKebabToClipboardCommand CopyKebabToClipboardCommand { get; }
+
+        public MainViewModel(KebabCase kebabCase)
         {
-            kebabCase = new KebabCase();
+            this.kebabCase = kebabCase ?? throw new ArgumentNullException(nameof(kebabCase));
+
+            CopyKebabToClipboardCommand = new CopyKebabToClipboardCommand(kebabCase);
 
             kebabCase.Decoded += HandleKebabCaseDecoded;
             kebabCase.Encoded += HandleKebabCaseEncoded;

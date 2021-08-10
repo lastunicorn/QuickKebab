@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickKebab", "QuickKebab\QuickKebab.csproj", "{D64748A1-534F-4901-90E2-F6C1CFD0B432}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickKebab", "QuickKebab\QuickKebab.csproj", "{D64748A1-534F-4901-90E2-F6C1CFD0B432}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickKebab.Domain", "QuickKebab.Domain\QuickKebab.Domain.csproj", "{A806D00C-BF06-4FFA-8C8D-C159140393CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickKebab.Presentation", "QuickKebab.Presentation\QuickKebab.Presentation.csproj", "{FC164236-FFB9-4926-8FCD-1CDADC4AB6C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{D64748A1-534F-4901-90E2-F6C1CFD0B432}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D64748A1-534F-4901-90E2-F6C1CFD0B432}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D64748A1-534F-4901-90E2-F6C1CFD0B432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A806D00C-BF06-4FFA-8C8D-C159140393CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A806D00C-BF06-4FFA-8C8D-C159140393CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A806D00C-BF06-4FFA-8C8D-C159140393CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A806D00C-BF06-4FFA-8C8D-C159140393CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC164236-FFB9-4926-8FCD-1CDADC4AB6C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC164236-FFB9-4926-8FCD-1CDADC4AB6C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC164236-FFB9-4926-8FCD-1CDADC4AB6C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC164236-FFB9-4926-8FCD-1CDADC4AB6C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

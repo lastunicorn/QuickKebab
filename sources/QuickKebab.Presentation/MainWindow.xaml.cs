@@ -15,26 +15,17 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.Windows;
-using DustInTheWind.QuickKebab.Domain;
-using DustInTheWind.QuickKebab.Presentation;
 
-namespace DustInTheWind.QuickKebab
+namespace DustInTheWind.QuickKebab.Presentation
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class MainWindow : Window
     {
-        private void App_OnStartup(object sender, StartupEventArgs e)
+        public MainWindow()
         {
-            KebabCase kebabCase = new KebabCase();
-
-            MainWindow = new MainWindow
-            {
-                DataContext = new MainViewModel(kebabCase)
-            };
-
-            MainWindow.Show();
+            InitializeComponent();
         }
     }
 }

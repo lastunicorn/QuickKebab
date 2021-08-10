@@ -1,9 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <AssemblyName>DustInTheWind.QuickKebab</AssemblyName>
+        <RootNamespace>DustInTheWind.QuickKebab</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\QuickKebab.Domain\QuickKebab.Domain.csproj" />
+      <ProjectReference Include="..\QuickKebab.Presentation\QuickKebab.Presentation.csproj" />
+    </ItemGroup>
 
 </Project>
